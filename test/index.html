@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>this is test page.</div>
+    <script src='../dist/eventful.js'></script>
+
+    <script>
+
+        class A extends Event.Eventful {
+            constructor() {
+                super();
+                this.test();
+            }
+
+            test() {
+                setInterval(() => {
+                    this.dispatchEvent('click', 1);
+                }, 3000);
+            }
+
+        }
+
+        const instance = new A();
+        let func = (event) => {
+            console.log(event);
+        };
+
+        let func2 = event => {
+            console.log(event, 'func2');
+        };
+        instance.addEventListener('click', func);
+        instance.addEventListener('click', func2);
+
+        let exist = instance.hasEventListener('click', func);
+        console.log('hasEventListener', exist);
+
+        let exist2 = instance.hasEventListener('clickc', func);
+        console.log('hasEventListener', exist2);
+
+        let success = instance.removeEventListener('click', func);
+        console.log('removeEventListener', success);
+
+
+        let exist3 = instance.hasEventListener('click', func);
+        console.log('hasEventListener', exist3);
+
+
+    </script>
+</body>
+</html>
+
