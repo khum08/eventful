@@ -1,7 +1,8 @@
 {
   "name": "yzk-eventful",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./dist/eventful.js",
+  "keywords": ["eventful", "event"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack build -w",
