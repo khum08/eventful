@@ -10,8 +10,11 @@ npm install yzk-eventful
 
 
 ## 2、usage example
-```
-class A extends Event.Eventful {
+```javascript
+import { Eventful } from 'yzk-eventful';
+
+
+class A extends Eventful {
     constructor() {
         super();
         this.test();
@@ -19,6 +22,7 @@ class A extends Event.Eventful {
 
     test() {
         setInterval(() => {
+            // dispatchEvent
             this.dispatchEvent('click', 1);
         }, 3000);
     }
@@ -29,11 +33,13 @@ const instance = new A();
 let func = (event) => {
     console.log(event);
 };
-
+// addEventListener
 instance.addEventListener('click', func);
 
+// hasEventListener
 let exist = instance.hasEventListener('click', func);
 
+// removeEventListener
 let success = instance.removeEventListener('click', func);
 
 ```
