@@ -1,15 +1,20 @@
-# Intro
+# Eventful
+![npm-version](https://img.shields.io/npm/v/yzk-eventful)
+![npm-size](https://img.shields.io/bundlephobia/minzip/yzk-eventful)
+![npm-download](https://img.shields.io/npm/dm/yzk-eventful)
+
+## Intro
 Simple、Lightful、Efficient event library. only 966 bytes.
 
 
-# Quick start
-## 1、install
+## Quick start
+### 1、install
 ```
 npm install yzk-eventful
 ```
 
 
-## 2、usage example
+### 2、usage example
 ```javascript
 import { Eventful } from 'yzk-eventful';
 
